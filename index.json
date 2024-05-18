@@ -9,14 +9,14 @@
     "name": "Unexpected End",
     "creator": "Bloctans",
     "description": "unexpected end of JSON input",
-    "script": "https://meo-32r.pages.dev/plugins/unexpectedend.js",
+    "script": "https://raw.githubusercontent.com/3r1s-s/meo-plugins/main/unexpectedend.js",
     "flags": "1"
 },
 {
     "name": "WorseMeower Theme",
     "creator": "Bloctans",
     "description": "Worsen your theme significantly",
-    "script": "https://meo-32r.pages.dev/plugins/worsetheme.js",
+    "script": "https://raw.githubusercontent.com/3r1s-s/meo-plugins/main/worsetheme.js",
     "flags": "1"
 },
 {
@@ -30,21 +30,21 @@
     "name": "Hell Meo",
     "creator": "Roblox888i235",
     "description": "Turns your meo into living hell (WARNING: BAD!!!)",
-    "script": "https://meo-32r.pages.dev/plugins/hellmeo.js",
+    "script": "https://raw.githubusercontent.com/3r1s-s/meo-plugins/main/hellmeo.js",
     "flags": "1"
 },
 {
     "name": "Meower Rotate",
     "creator": "Bloctans",
     "description": "Rotate your meo!!!!",
-    "script": "https://meo-32r.pages.dev/plugins/rotate.js",
+    "script": "https://raw.githubusercontent.com/3r1s-s/meo-plugins/main/rotate.js",
     "flags": "0"
 },
 {
     "name": "Meo ADs",
     "creator": "3r1s-s",
     "description": "I love adware!!",
-    "script": "https://meo-32r.pages.dev/plugins/meoads.js",
+    "script": "https://raw.githubusercontent.com/3r1s-s/meo-plugins/main/meoads.js",
     "flags": "1"
 }
 ]
