@@ -1,8 +1,8 @@
 [{
-    "name": "Meo Glass",
+    "name": "Meo/Leo Glass",
     "creator": "JoshAtticus",
     "description": "Glass theme for Meo",
-    "script": "https://update.greasyfork.org/scripts/485845/Meo%20Glass.user.js",
+    "script": "https://raw.githubusercontent.com/3r1s-s/meo-plugins/main/glass.js",
     "flags": "0"
 },
 {
