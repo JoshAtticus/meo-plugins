@@ -53,5 +53,12 @@
     "description": "Do you hate the bridge? This blurs bridged posts so you dont need to see them",
     "script": "https://raw.githubusercontent.com/3r1s-s/meo-plugins/main/nobridge.js",
     "flags": "0"
+},
+{
+    "name": "i use arch btw",
+    "creator": "ArrowAced",
+    "description": "Appends 'i use arch btw' to every message you send",
+    "script": "https://raw.githubusercontent.com/ArrowAced/meo-plugins/main/archbtw.js",
+    "flags": "0"
 }
 ]
