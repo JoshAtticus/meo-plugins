@@ -7,6 +7,7 @@ sendpost = function() {
   const ua = navigator.userAgent;
   if (!msgbox.value.includes(ua)) {
     msgbox.value += ` 
+***
 ###### Sent from ${ua}`;
   }
   
