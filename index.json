@@ -71,8 +71,8 @@
 {
     "name": "Typewriter",
     "creator": "ArrowAced",
-    "description": "click click click (all sounds from zapsplat (dont sue me))",
-    "script": "https://raw.githubusercontent.com/ArrowAced/meo-plugins/main/typewriter.js",
+    "description": "click clack (all sounds from zapsplat (dont sue me))",
+    "script": "https://raw.githubusercontent.com/3r1s-s/meo-plugins/main/typewriter.js",
     "flags": "0"
 }
 ]
