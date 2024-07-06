@@ -60,5 +60,12 @@
     "description": "Appends 'i use arch btw' to every message you send",
     "script": "https://raw.githubusercontent.com/3r1s-s/meo-plugins/main/archbtw.js",
     "flags": "0"
+},
+{
+    "name": "Sent from",
+    "creator": "3r1s-s",
+    "description": "Appends Sent from the device you're using to every message you send",
+    "script": "https://raw.githubusercontent.com/3r1s-s/meo-plugins/main/sentfrom.js",
+    "flags": "0"
 }
 ]
