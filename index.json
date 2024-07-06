@@ -58,7 +58,7 @@
     "name": "i use arch btw",
     "creator": "ArrowAced",
     "description": "Appends 'i use arch btw' to every message you send",
-    "script": "https://raw.githubusercontent.com/ArrowAced/meo-plugins/main/archbtw.js",
+    "script": "https://raw.githubusercontent.com/3r1s-s/meo-plugins/main/archbtw.js",
     "flags": "0"
 }
 ]
