@@ -41,6 +41,13 @@
     "flags": "0"
 },
 {
+    "name": "nuhhuh",
+    "creator": "ArrowAced",
+    "description": "Swaps :yuhhuh: and :nuhhuh: with each other",
+    "script": "https://raw.githubusercontent.com/3r1s-s/meo-plugins/main/nuhhuh.js",
+    "flags": "0"
+},
+{
     "name": "Meower Turn",
     "creator": "JoshAtticus",
     "description": "Make Meower turn on keypress",
