@@ -67,5 +67,14 @@
     "description": "Appends Sent from the device you're using to every message you send",
     "script": "https://raw.githubusercontent.com/3r1s-s/meo-plugins/main/sentfrom.js",
     "flags": "0"
+},
+{
+    "name": "Typewriter",
+    "creator": "ArrowAced",
+    "description": "click clack (all sounds from zapsplat (dont sue me))",
+    "script": "https://raw.githubusercontent.com/3r1s-s/meo-plugins/main/typewriter.js",
+    "flags": "0"
 }
 ]
+
+
