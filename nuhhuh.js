@@ -1,4 +1,4 @@
-actuallyerimd = erimd
+const actuallyerimd = erimd
 erimd = function(content) {
   const text = content 
 		.replace("&lt;:yuhhuh:1227268820213698611&gt;", "__TEMPYUHHUH__") 
