@@ -35,7 +35,7 @@
 
         const postContents = document.querySelectorAll('p.post-content > p');
         postContents.forEach(post => {
-            let text = post.textContent.trim();
+            let text = post.innerHTML.trim();
             if (text.endsWith('i use arch btw')) {
                 text = text.replace(/i use arch btw$/, '').trim();
             }
@@ -45,12 +45,12 @@
             if (text.includes('######')) {
                 text = text.replace(/######/, '').trim();
             }
-            post.textContent = text;
+            post.innerHTML = text;
         });
 
         const replies = document.querySelectorAll('div.reply-outer p');
         replies.forEach(reply => {
-            let text = reply.textContent.trim();
+            let text = reply.innerHTML.trim();
             if (text.includes('Sent from')) {
                 const splitText = text.split('Sent from');
                 if (splitText.length > 1) {
@@ -66,7 +66,7 @@
             if (text.includes('######')) {
                 text = text.replace(/######/, '').trim();
             }
-            reply.textContent = text;
+            reply.innerHTML = text;
         });
     }
 
