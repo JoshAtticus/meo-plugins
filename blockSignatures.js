@@ -49,8 +49,15 @@
     }
 
     const observer = new MutationObserver((mutations) => {
-        mutations.forEach(() => {
+        observer.disconnect();
+        try {
             removeSignatures();
+        } catch (e) {
+            console.error('Error in removeSignatures:', e);
+        }
+        observer.observe(document.body, {
+            childList: true,
+            subtree: true,
         });
     });
 
@@ -59,5 +66,8 @@
         subtree: true,
     });
 
-    removeSignatures();
+    document.addEventListener('DOMContentLoaded', () => {
+        removeSignatures();
+    });
+
 })();
