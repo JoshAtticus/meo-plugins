@@ -28,8 +28,8 @@
         hrs.forEach(hr => {
             let nextElement = hr.nextElementSibling;
             while (nextElement && (nextElement.tagName.toLowerCase() === 'h6' || nextElement.tagName.toLowerCase() === 'h5')) {
-                const containsLink = nextElement.querySelector('a[href="https://wlodekm.nekoweb.org"]');
-                const containsText = nextElement.textContent.includes('Sent from');
+                const containsLink = nextElement.querySelector('a');
+                const containsText = nextElement.textContent.includes('Sent');
                 if (containsLink || containsText) {
                     hr.remove();
                     nextElement.remove();
