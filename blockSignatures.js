@@ -1,6 +1,28 @@
 (function() {
     'use strict';
 
+    // Initialize the MutationObserver
+    const observer = new MutationObserver((mutations) => {
+        // Disconnect observer temporarily to prevent triggering itself
+        observer.disconnect();
+
+        mutations.forEach(() => {
+            removeSignatures();
+        });
+
+        // Reconnect observer after processing mutations
+        observer.observe(document.body, {
+            childList: true,
+            subtree: true,
+        });
+    });
+
+    // Start observing changes in the document body
+    observer.observe(document.body, {
+        childList: true,
+        subtree: true,
+    });
+
     function removeSignatures() {
         const hrs = document.querySelectorAll('hr');
         hrs.forEach(hr => {
@@ -48,26 +70,6 @@
         });
     }
 
-    const observer = new MutationObserver((mutations) => {
-        observer.disconnect();
-        try {
-            removeSignatures();
-        } catch (e) {
-            console.error('Error in removeSignatures:', e);
-        }
-        observer.observe(document.body, {
-            childList: true,
-            subtree: true,
-        });
-    });
-
-    observer.observe(document.body, {
-        childList: true,
-        subtree: true,
-    });
-
-    document.addEventListener('DOMContentLoaded', () => {
-        removeSignatures();
-    });
-
+    // Initial call to remove signatures on page load
+    removeSignatures();
 })();
