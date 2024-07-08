@@ -88,6 +88,13 @@
     "description": "Turns your meo into living hell (WARNING: BAD!!!)",
     "script": "https://raw.githubusercontent.com/3r1s-s/meo-plugins/main/hellmeo.js",
     "flags": "1"
+},
+{
+    "name": "No Signatures",
+    "creator": "JoshAtticus",
+    "description": "Removes signatures from posts",
+    "script": "https://raw.githubusercontent.com/3r1s-s/meo-plugins/main/blockSignatures.js",
+    "flags": "0"
 }
 ]
 
