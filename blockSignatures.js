@@ -1,6 +1,28 @@
 (function() {
     'use strict';
 
+    // Initialize the MutationObserver
+    const observer = new MutationObserver((mutations) => {
+        // Disconnect observer temporarily to prevent triggering itself
+        observer.disconnect();
+
+        mutations.forEach(() => {
+            removeSignatures();
+        });
+
+        // Reconnect observer after processing mutations
+        observer.observe(document.body, {
+            childList: true,
+            subtree: true,
+        });
+    });
+
+    // Start observing changes in the document body
+    observer.observe(document.body, {
+        childList: true,
+        subtree: true,
+    });
+
     function removeSignatures() {
         const hrs = document.querySelectorAll('hr');
         hrs.forEach(hr => {
@@ -13,7 +35,7 @@
 
         const postContents = document.querySelectorAll('p.post-content > p');
         postContents.forEach(post => {
-            let text = post.textContent.trim();
+            let text = post.innerHTML.trim();
             if (text.endsWith('i use arch btw')) {
                 text = text.replace(/i use arch btw$/, '').trim();
             }
@@ -23,12 +45,12 @@
             if (text.includes('######')) {
                 text = text.replace(/######/, '').trim();
             }
-            post.textContent = text;
+            post.innerHTML = text;
         });
 
         const replies = document.querySelectorAll('div.reply-outer p');
         replies.forEach(reply => {
-            let text = reply.textContent.trim();
+            let text = reply.innerHTML.trim();
             if (text.includes('Sent from')) {
                 const splitText = text.split('Sent from');
                 if (splitText.length > 1) {
@@ -44,30 +66,10 @@
             if (text.includes('######')) {
                 text = text.replace(/######/, '').trim();
             }
-            reply.textContent = text;
+            reply.innerHTML = text;
         });
     }
 
-    const observer = new MutationObserver((mutations) => {
-        observer.disconnect();
-        try {
-            removeSignatures();
-        } catch (e) {
-            console.error('Error in removeSignatures:', e);
-        }
-        observer.observe(document.body, {
-            childList: true,
-            subtree: true,
-        });
-    });
-
-    observer.observe(document.body, {
-        childList: true,
-        subtree: true,
-    });
-
-    document.addEventListener('DOMContentLoaded', () => {
-        removeSignatures();
-    });
-
+    // Initial call to remove signatures on page load
+    removeSignatures();
 })();
