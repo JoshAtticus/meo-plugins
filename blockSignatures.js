@@ -53,6 +53,9 @@
             if (text.includes('######')) {
                 text = text.replace(/######/, '').trim();
             }
+            if (text.includes('#####')) {
+                text = text.replace(/#####/, '').trim();
+            }
             post.innerHTML = text;
         });
 
@@ -73,6 +76,9 @@
             }
             if (text.includes('######')) {
                 text = text.replace(/######/, '').trim();
+            }
+            if (text.includes('#####')) {
+                text = text.replace(/#####/, '').trim();
             }
             reply.innerHTML = text;
         });
