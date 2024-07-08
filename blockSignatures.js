@@ -23,15 +23,23 @@
         subtree: true,
     });
 
-    function removeSignatures() {
+        function removeSignatures() {
         const hrs = document.querySelectorAll('hr');
         hrs.forEach(hr => {
-            const nextElement = hr.nextElementSibling;
-            if (nextElement && nextElement.tagName.toLowerCase() === 'h6' && nextElement.textContent.startsWith('Sent from')) {
-                hr.remove();
-                nextElement.remove();
+            let nextElement = hr.nextElementSibling;
+            while (nextElement && (nextElement.tagName.toLowerCase() === 'h6' || nextElement.tagName.toLowerCase() === 'h5')) {
+                const containsLink = nextElement.querySelector('a');
+                const containsText = nextElement.textContent.includes('Sent');
+                if (containsLink || containsText) {
+                    hr.remove();
+                    nextElement.remove();
+                    break;
+                }
+                nextElement = nextElement.nextElementSibling;
             }
         });
+
+
 
         const postContents = document.querySelectorAll('p.post-content > p');
         postContents.forEach(post => {
