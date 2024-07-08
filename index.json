@@ -48,6 +48,13 @@
     "flags": "0"
 },
 {
+    "name": "Aero User Frames",
+    "creator": "3r1s-s",
+    "description": "PFPs have the Windows 7 user frame",
+    "script": "https://raw.githubusercontent.com/3r1s-s/meo-plugins/main/seven.js",
+    "flags": "0"
+},
+{
     "name": "Meower Turn",
     "creator": "JoshAtticus",
     "description": "Make Meower turn on keypress",
@@ -97,5 +104,3 @@
     "flags": "0"
 }
 ]
-
-
