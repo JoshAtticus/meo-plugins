@@ -24,15 +24,24 @@
     });
 
     function removeSignatures() {
+        // Remove horizontal rule and subsequent elements that may contain signatures
         const hrs = document.querySelectorAll('hr');
         hrs.forEach(hr => {
-            const nextElement = hr.nextElementSibling;
-            if (nextElement && nextElement.tagName.toLowerCase() === 'h6' && nextElement.textContent.startsWith('Sent from')) {
-                hr.remove();
-                nextElement.remove();
+            let nextElement = hr.nextElementSibling;
+            while (nextElement) {
+                const containsLink = nextElement.querySelector('a');
+                const containsText = nextElement.textContent.includes('Sent');
+                if (containsLink || containsText) {
+                    hr.remove();
+                    nextElement.remove();
+                    nextElement = hr.nextElementSibling; // Reset to new next sibling of hr
+                    continue;
+                }
+                nextElement = nextElement.nextElementSibling;
             }
         });
 
+        // Remove signatures from post contents
         const postContents = document.querySelectorAll('p.post-content > p');
         postContents.forEach(post => {
             let text = post.innerHTML.trim();
@@ -45,17 +54,18 @@
             if (text.includes('######')) {
                 text = text.replace(/######/, '').trim();
             }
+            if (text.includes('#####')) {
+                text = text.replace(/#####/, '').trim();
+            }
             post.innerHTML = text;
         });
 
+        // Remove signatures from replies
         const replies = document.querySelectorAll('div.reply-outer p');
         replies.forEach(reply => {
             let text = reply.innerHTML.trim();
             if (text.includes('Sent from')) {
-                const splitText = text.split('Sent from');
-                if (splitText.length > 1) {
-                    text = splitText[0].trim();
-                }
+                text = text.split('Sent from')[0].trim();
             }
             if (text.endsWith('i use arch btw')) {
                 text = text.replace(/i use arch btw$/, '').trim();
@@ -65,6 +75,12 @@
             }
             if (text.includes('######')) {
                 text = text.replace(/######/, '').trim();
+            }
+            if (text.includes('#####')) {
+                text = text.replace(/#####/, '').trim();
+            }
+            if (text.includes('[visit my website pls]')) {
+                text = text.split('[visit my website pls]')[0].trim();
             }
             reply.innerHTML = text;
         });
